@@ -4,11 +4,12 @@ import React from "react";
 import HelloWorld from "./HelloWorld";
 import "./App.css"
 import Home from "./pages/Home";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
     <>
-      <Home />
+      <HomePage />
       <HelloWorld />
     </>
   );
