@@ -11,7 +11,7 @@ function HomePage() {
                 <img src="images/GeorgeHydroLogo.png" width={"170px"} alt="GeorgeHydroLogo" />
             </div>
             <div className="searchBar">
-                <input type="text" id="search" name="search" placeholder="請輸入關鍵字或商品編號" />
+                <input type="search" id="search" name="search" placeholder="請輸入關鍵字或商品編號" />
                 <FaSearch id="FaSearch"/>
             </div>
             <div className="login">Login / Register</div>
