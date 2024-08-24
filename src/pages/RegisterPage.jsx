@@ -2,15 +2,15 @@
 
 import React from "react";
 import NavBar from "../components/NavBar";
-import Login from "../components/Login";
+import Register from "../components/Register";
 
-function LoginPage(){
+function RegisterPage(){
     return (
         <>
             <NavBar />
-            <Login />
+            <Register />
         </>
     )
 }
 
-export default LoginPage;
+export default RegisterPage;

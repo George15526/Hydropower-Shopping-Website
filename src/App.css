@@ -44,11 +44,14 @@ div.logo {
 
 div.searchBar {
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    
 }
 
 #search {
-    width: 500px;
-    height: 25px;
+    width: 600px;
+    height: 30px;
     text-align: left;
     padding-left: 5px;
     font-size: 15px;
@@ -60,8 +63,25 @@ div.searchBar {
     right: 25px;
 }
 
-div.login {
+div.loginOrRegister {
     margin-right: 0;
+}
+
+hr.solid {
+    border: 1px solid black;
+}
+
+a {
+    color: black;
+}
+
+a:link { 
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blue;
 }
 
 div.divider {
@@ -85,16 +105,17 @@ div.shoppingCart {
 /* LoginPage css */
 
 .LoginPage {
-    margin-top: 100px;
+    background-color: rgba(0, 0, 0, 0.808);
+    height: 605px;
+    padding-top: 100px;
     font-family: sans-serif;
     font-size: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-.loginForm {
+.Form {
     border: 2px solid black;
     border-radius: 20px;
     background-color: #D9D9D9;
@@ -102,7 +123,7 @@ div.shoppingCart {
     display: flex;
     flex-direction: column;
     width: 450px;
-    height: 350px;
+    height: auto;
 }
 
 #login-title {
@@ -113,7 +134,7 @@ div.shoppingCart {
 .input {
     margin-top: 5px;
     margin-bottom: 5px;
-    height: 30px;
+    height: 25px;
 }
 
 #member_submit {
@@ -127,5 +148,26 @@ div.shoppingCart {
 #p1 {
     text-align: center;
     font-size: 15px;
-    margin-top: 5px;
+    margin-top: 10px;
+}
+
+.RegisterPage {
+    background-color: rgba(0, 0, 0, 0.808);
+    height: 605px;
+    padding-top: 50px;
+    font-family: sans-serif;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gender-radio {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+.female {
+    margin-left: 20px;
 }
