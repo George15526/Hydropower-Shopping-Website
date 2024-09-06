@@ -22,4 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Secret file
 *.env
+*.json
+
+# Database migrations
+/migrations/
