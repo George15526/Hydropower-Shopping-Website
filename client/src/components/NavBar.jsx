@@ -1,15 +1,14 @@
 // ./components/NavBar.jsx
 
-import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { PiShoppingCartFill } from "react-icons/pi";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
     return (
         <div className="HomeBar">
             <div className="logo">
-                <NavLink to={"/"}><img src="images/GeorgeHydroLogo.png" width={"170px"} alt="GeorgeHydroLogo" /></NavLink>
+                <NavLink to={"/"}><img src="../src/assets/GeorgeHydroLogo.png" width={"170px"} alt="GeorgeHydroLogo" /></NavLink>
             </div>
             <div className="searchBar">
                 <input type="search" id="search" name="search" placeholder="請輸入關鍵字或商品編號" />

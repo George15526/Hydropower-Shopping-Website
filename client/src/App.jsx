@@ -1,10 +1,7 @@
 // App
 
-import React, { createElement } from "react";
-import { BrowserRouter, Routes, Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
-import HelloWorld from "./HelloWorld";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import "./App.css"
-import Home from "./pages/Home";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";

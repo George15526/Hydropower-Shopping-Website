@@ -1,8 +1,7 @@
 // LoginPage.jsx
 
-import React from "react";
 import NavBar from "../components/NavBar";
-import Register from "../components/Register";
+import Register from "../components/register/RegisterForm";
 
 function RegisterPage(){
     return (
