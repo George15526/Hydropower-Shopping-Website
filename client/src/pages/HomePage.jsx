@@ -1,11 +1,12 @@
 // HomePage.jsx
 
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar/Navbar";
+
 
 function HomePage() {
     return (
         <>
-            <NavBar />
+            <Navbar />
         </>
     )
 }
