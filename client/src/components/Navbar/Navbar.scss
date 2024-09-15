@@ -1,0 +1,90 @@
+// Navbar.scss
+.navbar {
+    width: 100%;
+    height: 130px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+
+    .navbarContainer {
+        width: 90%;
+        height: 100%;
+        color: white;
+
+        .firstLine {
+            display: flex;
+            height: 40%;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .secondLine {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .left {
+                display: flex;
+
+                span {
+                    font-size: 25px;
+                    font-weight: 600;
+                    color: white;
+                }
+
+                a:link {
+                    text-decoration: none;
+                }
+
+                a:hover {
+
+                }
+            }
+
+            .middle {
+                display: flex;
+                flex-direction: row;
+                width: 50%;
+                position: relative;
+
+                #search {
+                    width: 100%;
+                    height: 30px;
+                    font-size: 15px;
+                    font-weight: 400;
+                }
+
+                #FaSearch {
+                    position: absolute;
+                    right: 3px;
+                    top: 5px;
+                    color: black;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            .right {
+                display: flex;
+                width: 300px;
+
+                .btn-hover {
+                    width: 150px;
+                    height: 30px;
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin: 10%;
+
+                    #shoppingCartIcon {
+                        position: relative;
+                        top: 1px;
+                    }
+                    
+                    &:hover {
+
+                    }
+                }
+            }
+        }
+    }
+}
