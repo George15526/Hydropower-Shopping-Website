@@ -8,4 +8,6 @@
 
 ### What is in this Website
 
-We will be back...
+09/20 Navbar view
+
+![alt text](image.png)
