@@ -1,7 +1,7 @@
 // Navbar.scss
 .navbar {
     width: 100%;
-    height: 130px;
+    height: 100px;
     background-color: var(--primary-color);
     display: flex;
     justify-content: center;
@@ -10,15 +10,9 @@
         width: 90%;
         height: 100%;
         color: white;
+        padding: 20px 0 0 0;
 
         .firstLine {
-            display: flex;
-            height: 40%;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .secondLine {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -35,54 +29,131 @@
                 a:link {
                     text-decoration: none;
                 }
-
-                a:hover {
-
-                }
-            }
-
-            .middle {
-                display: flex;
-                flex-direction: row;
-                width: 50%;
-                position: relative;
-
-                #search {
-                    width: 100%;
-                    height: 30px;
-                    font-size: 15px;
-                    font-weight: 400;
-                }
-
-                #FaSearch {
-                    position: absolute;
-                    right: 3px;
-                    top: 5px;
-                    color: black;
-                    width: 20px;
-                    height: 20px;
-                }
             }
 
             .right {
                 display: flex;
+                justify-content: flex-end;
+                align-items: center;
                 width: 300px;
+                padding-right: 15px;
 
+                a:link {
+                    text-decoration: none;
+                }
+    
                 .btn-hover {
-                    width: 150px;
-                    height: 30px;
-                    font-size: 20px;
-                    font-weight: 600;
-                    margin: 10%;
+                    width: 60px;
+                    height: 60px;
+                    text-align: center;
+                    background-color: var(--primary-color);
+                    display: block;
+                    position: relative;
+                    border: 1px solid var(--primary-color);
+                    padding: 1px 1px;
+                    z-index: 1;
+                    
+                    #searchIcon {
+                        position: relative;
+                        top: 3px;
+                        width: 25px;
+                        height: 19px;
+                        color: black;
+                        transition: .5s;
+                        z-index: 3;
+                    }
+
+                    #notifIcon {
+                        position: relative;
+                        top: 3px;
+                        width: 25px;
+                        height: 25px;
+                        color: black;
+                        transition: .5s;
+                        z-index: 3;
+                    }
 
                     #shoppingCartIcon {
                         position: relative;
-                        top: 1px;
+                        top: 3px;
+                        width: 25px;
+                        height: 25px;
+                        color: black;
+                        transition: .5s;
+                        z-index: 3;
                     }
-                    
+    
+                    #profileIcon {
+                        position: relative;
+                        top: 3px;
+                        width: 25px;
+                        height: 25px;
+                        color: black;
+                        transition: .5s;
+                        z-index: 3;
+                    }
+    
                     &:hover {
+                        cursor: pointer;
 
+                        #searchIcon {
+                            color: white;
+                            transform: rotateY(360deg);
+                        }
+
+                        #notifIcon {
+                            color: white;
+                            transform: rotateY(360deg);
+                        }
+
+                        #shoppingCartIcon {
+                            color: white;
+                            transform: rotateY(360deg);
+                        }
+                        
+                        #profileIcon {
+                            color: white;
+                            transform: rotateY(360deg);
+                        }
                     }
+                }
+
+                .btn-hover[title]:hover::after {
+                    content: attr(title);
+                    display: flex;
+                    justify-content: center;
+                    position: relative;
+                    top: 5px;
+                    font-size: 15px;
+                    font-weight: 500;
+                    white-space: nowrap;
+                    z-index: 3;
+                }
+
+                div {
+                    position: absolute;
+                    width: 3%;
+                    height: 30px;
+                    left: 95%;
+                    border: 1px solid white;
+                    border-radius: 6px;
+                    padding: 2px 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 3;
+
+                    .username {
+                        color: black;
+                        text-align: center;
+                        font-size: 15px;
+                        font-weight: 550;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
                 }
             }
         }
