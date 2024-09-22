@@ -8,6 +8,5 @@
 
 ### What is in this Website
 
-09/20 Navbar view
-
-![alt text](image.png)
+* Navbar view
+![alt text](Navbar.gif)
