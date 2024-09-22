@@ -12,25 +12,24 @@ function Navbar() {
     return (
         <div className="navbar">
             <div className="navbarContainer">
-                
                 <div className="firstLine">
-                    <div className="left">
+                    <div className="logoArea">
                         <NavLink to={"/"}>
-                            <span className="logo">GEORGE.BAKERY</span>
+                        <span className="logo">GEORGE.BAKERY</span>
                         </NavLink>
                     </div>
-                    <div className="right">
-                        <NavLink to={"/auth/notifications"}>
-                        <button className="btn-hover" title="搜尋"><FaSearch id="searchIcon" /></button>
+                    <div className="btnArea">
+                        <NavLink to={"/auth/search"}>
+                        <button className="btn" title="搜尋"><FaSearch id="searchIcon" /></button>
                         </NavLink>
                         <NavLink to={"/auth/notifications"}>
-                        <button className="btn-hover" title="通知"><IoIosNotifications id="notifIcon" /></button>
+                        <button className="btn" title="通知"><IoIosNotifications id="notifIcon" /></button>
                         </NavLink>
                         <NavLink to={"/auth/shoppingCart"}>
-                        <button className="btn-hover" title="購物車"><PiShoppingCartFill id="shoppingCartIcon" /></button>
+                        <button className="btn" title="購物車"><PiShoppingCartFill id="shoppingCartIcon" /></button>
                         </NavLink>
                         <NavLink to={"/auth/loginpage"}>
-                        <button className="btn-hover" title="會員中心"><BsPersonCircle id="profileIcon" /></button>
+                        <button className="btn" title="會員中心"><BsPersonCircle id="profileIcon" /></button>
                         </NavLink>
                         <div>
                             <p className="username">訪客</p>
