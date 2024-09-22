@@ -8,8 +8,5 @@
 
 ### What is in this Website
 
-09/20 Navbar view
-
-![alt text](image.png)
-
-> Project process track in https://github.com/users/George15526/projects/3/views/2
+* Navbar view
+<img height="50%" src="https://github.com/George15526/Hydropower-Shopping-Website/blob/assets/Navbar.gif" />
