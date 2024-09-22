@@ -1,29 +1,32 @@
 // Navbar.scss
 .navbar {
     width: 100%;
-    height: 100px;
+    height: 90px;
     background-color: var(--primary-color);
     display: flex;
     justify-content: center;
 
     .navbarContainer {
-        width: 90%;
+        width: 92%;
         height: 100%;
-        color: white;
-        padding: 20px 0 0 0;
-
+        color: black;
+        padding: 20px 0 0 0;        
+        
         .firstLine {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .left {
+            justify-content: flex-end;
+            
+            .logoArea {
+                width: 50%;
                 display: flex;
-
-                span {
+                justify-content: center;
+                align-items: center;
+    
+                .logo {
                     font-size: 25px;
-                    font-weight: 600;
-                    color: white;
+                    font-weight: 700;
+                    font-style: italic;
+                    color: black;
                 }
 
                 a:link {
@@ -31,7 +34,8 @@
                 }
             }
 
-            .right {
+            .btnArea {
+                width: 50%;
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
@@ -148,7 +152,6 @@
                     &:hover {
                         cursor: pointer;
                     }
-
                 }
             }
         }
