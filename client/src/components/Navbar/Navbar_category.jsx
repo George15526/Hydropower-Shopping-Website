@@ -26,6 +26,11 @@ const Navbar_category = () => {
                             <span className="categoryName">奶酪</span>
                         </div>
                     </span>
+                    <span className="category">
+                        <div>
+                            <span className="categoryName">關於我們</span>
+                        </div>
+                    </span>
                 </ul>
             </div>
         </div>
