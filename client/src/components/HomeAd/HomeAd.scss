@@ -19,11 +19,12 @@
 
         .HomeAd {
             font-size: 20px;
+            z-index: -1;
 
             img {
                 margin-top: 5px;
                 // width: 1500px;
-                height: 1000px;
+                height: 1500px;
             }
         }
     }
