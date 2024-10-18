@@ -1,0 +1,46 @@
+// SubNavbar.scss
+.subNavbar {
+    width: 100%;
+    background-color: #ffbbcd;  // 設定背景色為主色
+    height: 2.5rem;
+
+    .subNavbarContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3px 0;
+
+        .categorySort {
+            display: flex;
+            justify-content: center;  // 類別之間均勻分布
+            align-items: center;
+            width: 100%;
+            height: 100%;
+
+            .categoryMenu {
+                height: 100%;
+                display: flex;
+                justify-content: center;  // 讓每個分類置中
+                align-items: center;
+                padding: 3px;
+        
+                .categoryName {
+                    height: 100%;
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: black;
+                    cursor: pointer;
+        
+                    &:hover {
+                        color: rgba(0, 0, 0, 0.452);  // 滑過時變成白色
+                        transition: color 0.1s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
