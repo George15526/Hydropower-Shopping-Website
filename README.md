@@ -8,5 +8,8 @@
 
 ### What is in this Website
 
-* Website view
-<img height="50%" src="https://github.com/user-attachments/assets/0825d12a-af24-4731-aaa5-c7a115340b35" />
+* Navbar view
+<img height="50%" src="https://github.com/user-attachments/assets/f249769c-d1be-4cfd-abff-e344c02bd24e" />
+
+* HomeAd view
+<img height="50%" src="https://github.com/user-attachments/assets/1fcc30ae-5283-4b83-8a39-d80cffd8c0de" />
