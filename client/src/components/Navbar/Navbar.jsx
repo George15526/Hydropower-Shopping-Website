@@ -1,44 +1,42 @@
-// NavBar.jsx
-
 import { FaSearch } from "react-icons/fa";
 import { PiShoppingCartFill } from "react-icons/pi";
 import { BsPersonCircle } from "react-icons/bs";
 import { IoIosNotifications } from "react-icons/io";
 import { NavLink } from "react-router-dom";
+import { Navbar, Nav, Container, Button } from 'react-bootstrap';  // 引入 react-bootstrap 組件
 import './Navbar.scss';
-import '../../App.css'
+import '../../App.css';
 
-function Navbar() {
+function NavBar() {
     return (
-        <div className="navbar">
-            <div className="navbarContainer">
-                <div className="firstLine">
-                    <div className="logoArea">
-                        <NavLink to={"/"}>
-                        <span className="logo">GEORGE.BAKERY</span>
-                        </NavLink>
-                    </div>
-                    <div className="btnArea">
-                        <NavLink to={"/auth/search"}>
-                        <button className="btn" title="搜尋"><FaSearch id="searchIcon" /></button>
-                        </NavLink>
-                        <NavLink to={"/auth/notifications"}>
-                        <button className="btn" title="通知"><IoIosNotifications id="notifIcon" /></button>
-                        </NavLink>
-                        <NavLink to={"/auth/shoppingCart"}>
-                        <button className="btn" title="購物車"><PiShoppingCartFill id="shoppingCartIcon" /></button>
-                        </NavLink>
-                        <NavLink to={"/auth/loginpage"}>
-                        <button className="btn" title="會員中心"><BsPersonCircle id="profileIcon" /></button>
-                        </NavLink>
-                        <div>
+        <Navbar expand="lg" className="navbar">
+            <Container className="navbarContainer">
+                <Navbar.Brand as={NavLink} to={"/"} className="logoArea">
+                    <span className="logo">GEORGE.BAKERY</span>
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="navbar-nav" />
+                <Navbar.Collapse id="navbar-nav">
+                    <Nav className="ms-auto btnArea">
+                        <Nav.Link as={NavLink} to={"/auth/search"} className="navLink">
+                            <Button className="btn"  title="搜尋"><FaSearch id="searchIcon" className="icon" /></Button>
+                        </Nav.Link>
+                        <Nav.Link as={NavLink} to={"/auth/notifications"} className="navLink">
+                            <Button className="btn" title="通知"><IoIosNotifications id="notifIcon" className="icon" /></Button>
+                        </Nav.Link>
+                        <Nav.Link as={NavLink} to={"/auth/shoppingCart"} className="navLink">
+                            <Button className="btn" title="購物車"><PiShoppingCartFill id="shoppingCartIcon" className="icon" /></Button>
+                        </Nav.Link>
+                        <Nav.Link as={NavLink} to={"/auth/loginpage"} className="navLink">
+                            <Button className="btn" title="會員中心"><BsPersonCircle id="profileIcon" className="icon" /></Button>
+                        </Nav.Link>
+                        <div className="usernameContainer">
                             <p className="username">訪客</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
 }
 
-export default Navbar;
+export default NavBar;

@@ -1,163 +1,115 @@
-// Navbar.scss
 .navbar {
-    width: 100%;
-    height: 90px;
     background-color: var(--primary-color);
+    height: 6rem;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     .navbarContainer {
-        width: 92%;
-        height: 100%;
-        color: black;
-        padding: 20px 0 0 0;
-                
-        .firstLine {
-            display: flex;
-            justify-content: center;
-            
-            .logoArea {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding-top: 10px;
-    
-                .logo {
-                    font-size: 25px;
-                    font-weight: 700;
-                    font-style: italic;
-                    color: black;
-                }
+        width: 100rem;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
 
-                a:link {
-                    text-decoration: none;
+        .logoArea {
+            width: 50rem;
+            font-size: 25px;
+            font-weight: 700;
+            font-style: italic;
+            color: black;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+    
+            &:hover {
+                color: rgba(0, 0, 0, 0.651); /* 取消下劃線 */
+                text-decoration: none;
+            }
+        }
+    
+        #navbar-nav {
+            display: flex;
+            justify-content: flex-end;
+        }
+    
+        .btnArea {
+            width: 50rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 0;
+    
+            .btn {
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                background-color: var(--primary-color);
+                display: block;
+                position: relative;
+                border: 1px solid var(--primary-color);
+                z-index: 1;
+                
+                .icon {
+                    position: relative;
+                    width: 25px;
+                    height: 25px;
+                    color: black;
+                    transition: .5s;
+                    z-index: 3;
+                }
+    
+                #searchIcon {
+                    height: 19px;
+                }
+    
+                &:hover {
+                    cursor: pointer;
+                    
+                    .icon {
+                        color: white;
+                        transform: rotateY(360deg); /* 圖標旋轉 */
+                    }
                 }
             }
-
-            .btnArea {
-                width: 50%;
+    
+            .btn[title]:hover::after {
+                content: attr(title);
                 display: flex;
-                justify-content: flex-end;
+                justify-content: center;
+                position: relative;
+                top: 5px;
+                font-size: 15px;
+                font-weight: 500;
+                white-space: nowrap;
+                z-index: 3;
+            }
+            
+            .usernameContainer {
+                margin: 5px;
+                position: relative;
+                width: 50px;
+                height: 30px;
+                border: 1px solid white;
+                border-radius: 6px;
+                display: flex;
                 align-items: center;
-                width: 300px;
-                padding-right: 15px;
-                position: absolute;
-                right: 5%;
-
-                a:link {
-                    text-decoration: none;
-                }
-    
-                .btn {
-                    width: 50px;
-                    height: 50px;
-                    text-align: center;
-                    background-color: var(--primary-color);
-                    display: block;
-                    position: relative;
-                    border: 1px solid var(--primary-color);
-                    padding: 1px 1px;
-                    z-index: 1;
-                    
-                    #searchIcon {
-                        position: relative;
-                        width: 25px;
-                        height: 19px;
-                        color: black;
-                        transition: .5s;
-                        z-index: 3;
-                    }
-
-                    #notifIcon {
-                        position: relative;
-                        width: 25px;
-                        height: 25px;
-                        color: black;
-                        transition: .5s;
-                        z-index: 3;
-                    }
-
-                    #shoppingCartIcon {
-                        position: relative;
-                        width: 25px;
-                        height: 25px;
-                        color: black;
-                        transition: .5s;
-                        z-index: 3;
-                    }
-    
-                    #profileIcon {
-                        position: relative;
-                        width: 25px;
-                        height: 25px;
-                        color: black;
-                        transition: .5s;
-                        z-index: 3;
-                    }
-    
-                    &:hover {
-                        cursor: pointer;
-
-                        #searchIcon {
-                            color: white;
-                            transform: rotateY(360deg);
-                        }
-
-                        #notifIcon {
-                            color: white;
-                            transform: rotateY(360deg);
-                        }
-
-                        #shoppingCartIcon {
-                            color: white;
-                            transform: rotateY(360deg);
-                        }
-                        
-                        #profileIcon {
-                            color: white;
-                            transform: rotateY(360deg);
-                        }
-                    }
-                }
-
-                .btn[title]:hover::after {
-                    content: attr(title);
-                    display: flex;
-                    justify-content: center;
-                    position: relative;
-                    top: 5px;
+                justify-content: center;
+                
+                .username {
+                    color: black;
                     font-size: 15px;
-                    font-weight: 500;
-                    white-space: nowrap;
-                    z-index: 3;
+                    font-weight: 550;
+                    text-align: center;
+                    margin: 0;
                 }
-
-                div {
-                    position: absolute;
-                    width: 40px;
-                    height: 30px;
-                    left: 95%;
-                    margin-left: 5px;
-                    margin-bottom: 4px;
-                    border: 1px solid white;
-                    border-radius: 6px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    z-index: 3;
-
-                    .username {
-                        color: black;
-                        text-align: center;
-                        font-size: 15px;
-                        font-weight: 550;
-                    }
-
-                    &:hover {
-                        cursor: pointer;
-                    }
+    
+                &:hover {
+                    cursor: pointer;
                 }
             }
         }
     }
+
 }
