@@ -1,14 +1,39 @@
-// HomeAd.jsx
-import "./HomeAd.scss";
+import { Carousel } from "react-bootstrap";
+import './HomeAd.scss';
 
 const HomeAd = () => {
   return (
-    <div className="HomeAdContainer">
-        <div className="HomeAdArea">
-            <span className="HomeAd">
-            <img src="../src/assets/breadAd_2.jpg" alt="BreadAd" />
-            </span>
-        </div>
+    <div className="homeAd">
+        <Carousel>
+            <Carousel.Item className="items">
+                <img
+                    className="pic"
+                    src="src/assets/breadAd_1.jpg"
+                    alt="Slide image alt"
+                />
+            </Carousel.Item>
+            <Carousel.Item className="items">
+                <img
+                    className="pic"
+                    src="src/assets/breadAd_2.jpg"
+                    alt="Slide image alt"
+                />
+            </Carousel.Item>
+            <Carousel.Item className="items">
+                <img
+                    className="pic"
+                    src="src/assets/breadAd_3.jpg"
+                    alt="Slide image alt"
+                />
+            </Carousel.Item>
+            <Carousel.Item className="items">
+                <img
+                    className="pic"
+                    src="src/assets/breadAd_4.jpg"
+                    alt="Slide image alt"
+                />
+            </Carousel.Item>
+        </Carousel>
     </div>
   )
 }
