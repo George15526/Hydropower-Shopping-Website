@@ -15,4 +15,4 @@
 <img height="50%" src="https://github.com/user-attachments/assets/1fcc30ae-5283-4b83-8a39-d80cffd8c0de" />
 
 * HomeItems view
-<img height="50%" src="https://github.com/user-attachments/assets/9007d49a-1dd1-4ce9-9eb0-e4674d9a62ba" />
+<img height="100%" src="https://github.com/user-attachments/assets/9007d49a-1dd1-4ce9-9eb0-e4674d9a62ba" />
