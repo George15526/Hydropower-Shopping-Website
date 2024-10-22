@@ -6,7 +6,7 @@
 * Frontend framework -- React.js + Vite
 * Backend framework -- Express from Node.js
 
-### What is in this Website
+### What's interesting things in this website
 
 * Navbar view
 <img height="50%" src="https://github.com/user-attachments/assets/f249769c-d1be-4cfd-abff-e344c02bd24e" />
