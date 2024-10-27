@@ -1,10 +1,12 @@
 // HomeItems.scss
-.items {
-    font-size: 20px;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
+.homeItems{
+    .items {
+        font-size: 20px;
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
 
-    &:hover {
-        transform: scale(1.1);
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 }
