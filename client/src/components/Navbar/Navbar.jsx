@@ -26,7 +26,7 @@ function NavBar() {
                         <Nav.Link as={NavLink} to={"/auth/shoppingCart"} className="navLink">
                             <Button className="btn" title="購物車"><PiShoppingCartFill id="shoppingCartIcon" className="icon" /></Button>
                         </Nav.Link>
-                        <Nav.Link as={NavLink} to={"/auth/register"} className="navLink">
+                        <Nav.Link as={NavLink} to={"/member/"} className="navLink">
                             <Button className="btn" title="會員中心"><BsPersonCircle id="profileIcon" className="icon" /></Button>
                         </Nav.Link>
                         <div className="usernameContainer">
