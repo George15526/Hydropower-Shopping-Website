@@ -1,24 +1,14 @@
 // server/config/db.js
-const mysql = require('mysql2');
+const mongoose = require('mongoose');
+const { Sequelize } = require('sequelize');
 
-const connectDB = () => {
-    const connection = mysql.createConnection({
-        host: process.env.HOST,
-        user: process.env.USER,
-        password: process.env.PASSWORD,
-        database: process.env.DATABASE,
-    });
+// MongoDB settings
+// mongoose.connect('mongodb://localhost:27017/ecommerce');
 
-    connection.connect((err) => {
-        if (err) {
-            console.error(`Error connecting MySQL: ${err.message}`);
-            process.exit(1);
-        } else {
-            console.log('MySQL connected');
-        }
-    });
+// MySQL settings
+const sequelize = new Sequelize('ecommerce', 'root', 'sayanything', {
+    host: 'localhost',
+    dialect: 'mysql'
+});
 
-    return connection;
-}
-
-module.exports = connectDB;
+module.exports = { sequelize };
