@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node index.js",
     "devStart": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "testwatch": "jest --watchAll"
   },
   "author": "",
   "license": "ISC",
@@ -22,5 +23,15 @@
     "nodemon": "^3.1.4",
     "sequelize": "^6.37.3",
     "sequelize-cli": "^6.6.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
