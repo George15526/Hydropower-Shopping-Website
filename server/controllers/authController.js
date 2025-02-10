@@ -8,6 +8,37 @@ const JWT_SECRET = 'JWT_SECRET';
 
 // 用戶註冊
 exports.register = async (req, res) => {
+    /*
+    URI: api/v1/register
+    Method: POST
+    Description: User register
+    Type: application/json
+    Request: 
+        {
+            "name": string,
+            "email": string,
+            "password": string
+        }
+    Response:
+        200:
+            {
+                "status": "success",
+                "message": "User registered successfully",
+                "data": {
+                    newUser,
+                },
+            }
+        400:
+            {
+                "status": "error",
+                "message": "Email already in use",
+            }
+        500:
+            {
+                "status": "error",
+                "message": "Database error",
+            }
+    */
     const { name, email, password } = req.body;    
     const hashedPassword = await bcrypt.hash(password, 10);
     
