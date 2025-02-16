@@ -11,4 +11,12 @@ const sequelize = new Sequelize('ecommerce', 'root', 'sayanything', {
     dialect: 'mysql'
 });
 
+sequelize.sync({ force: false })
+    .then(() => {
+        console.log('Database sync complete!');
+    })
+    .catch((err) => {
+        console.log('Database sync failed:', err);
+    });
+
 module.exports = { sequelize };
