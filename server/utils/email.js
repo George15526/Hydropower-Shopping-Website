@@ -9,18 +9,21 @@ const transporter = nodemailer.createTransport({
 });
 
 const sendVerification = async (email, token) => {
-    console.log('This is sendVerification');
-    const verificationLink = `http://localhost:3001/api/v1/verify/${token}`;
-
-    const mailOptions = {
-        from: 'george950506@gmail.com',
-        to: email,
-        subject: 'Email verification',
-        text: `Click the following link to verify your email: ${verificationLink}`,
+    try {
+        const verificationLink = `http://localhost:3001/api/v1/verify/${token}`;
+    
+        const mailOptions = {
+            from: 'george950506@gmail.com',
+            to: email,
+            subject: 'Email verification',
+            text: `Click the following link to verify your email: ${verificationLink}`,
+        };
+    
+        const info = await transporter.sendMail(mailOptions);
+        console.log('Send mail successfully:', info);
+    } catch (error) {
+        console.error('Error sending email:', error);
     };
-
-    await transporter.sendMail(mailOptions);
-    console.log('Send mail successfully');
 };
 
 module.exports = { sendVerification };
