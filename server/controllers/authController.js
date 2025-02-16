@@ -2,7 +2,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/mysql/User');
-const { sequelize } = require('../config/db');
+const { sendVerification } = require('../utils/email');
 
 const JWT_SECRET = 'JWT_SECRET';
 
@@ -43,24 +43,27 @@ exports.register = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     
     try {
-        const user = await User.findOne({ where: { email: email } });
-        if (user) {
+        const existingUser = await User.findOne({ where: { email: email } });
+        if (existingUser) {
             return res.status(400).json({
                 status: 'error',
                 message: 'Email already in use',
             });
         }
-        const newUser = await User.create({
+        const user = await User.create({
             name: name,
             email: email,
             password: hashedPassword
         });
-        return res.json({
+
+        const token = jwt.sign({ email }, JWT_SECRET, { expiresIn: '1h' });
+        console.log(token);
+
+        await sendVerification(email, token);
+
+        return res.status(201).json({
             status: 'success',
-            message: 'User registered successfully',
-            data: {
-                newUser,
-            },
+            message: 'User registered. Please verify your email.',
         });
     } catch (error) {
         return res.status(500).json({
@@ -68,6 +71,26 @@ exports.register = async (req, res) => {
             message: 'Database error',
         });
     };
+};
+
+exports.verifyEmail = async (req, res) => {
+    try {
+        const { token } = req.params;
+        const decoded = jwt.verify(token, JWT_SECRET);
+
+        await User.update(
+            { isVerified: true },
+            {
+                where: {
+                    email: decoded.email,
+                },
+            },
+        );
+
+        res.send('Email verified successfully');
+    } catch (error) {
+        res.status(400).send('Invalid or expired token');
+    }
 };
 
 // 用戶登入
