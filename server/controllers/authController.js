@@ -8,37 +8,73 @@ const JWT_SECRET = 'JWT_SECRET';
 
 // 用戶註冊
 exports.register = async (req, res) => {
-    /*
-    URI: api/v1/register
-    Method: POST
-    Description: User register
-    Type: application/json
-    Request: 
-        {
-            "name": string,
-            "email": string,
-            "password": string
-        }
-    Response:
-        200:
-            {
-                "status": "success",
-                "message": "User registered successfully",
-                "data": {
-                    newUser,
-                },
-            }
-        400:
-            {
-                "status": "error",
-                "message": "Email already in use",
-            }
-        500:
-            {
-                "status": "error",
-                "message": "Database error",
-            }
-    */
+	/**
+	 * @swagger
+	 * /api/v1/auth/register:
+	 *   post:
+	 *     description: User register.
+	 *     tags:
+	 *       - Authentication
+	 *     requestBody:
+	 *       required: true
+	 *       content:
+	 *         application/json:
+	 *           schema:
+	 *             type: object
+	 *             properties:
+	 *               name:
+	 *                 description: User's name
+	 *                 required: true
+	 *                 example: "George"
+	 *               email:
+	 *                 description: User's email
+	 *                 required: true
+	 *                 example: "george920102@gmail.com"
+	 *               password:
+	 *                 description: User's password
+	 *                 required: true
+	 *                 example: "georgePassword"
+	 *     responses:
+	 *       201:
+	 *         description: User registered. Please verify your email.
+	 *         content:
+	 *           application/json:
+	 *             schema:
+	 *               type: object
+	 *               properties:
+	 *                 status:
+	 *                   type: string
+	 *                   example: "success"
+	 *                 message:
+	 *                   type: string
+	 *                   example: "User registered. Please verify your email."
+	 *       400:
+	 *         description: Email already in use
+	 *         content:
+	 *           application/json:
+	 *             schema:
+	 *               type: object
+	 *               properties:
+	 *                 status:
+	 *                   type: string
+	 *                   example: "error"
+	 *                 message:
+	 *                   type: string
+	 *                   example: "Email already in use"
+	 *       500:
+	 *         description: Database error
+	 *         content:
+	 *           application/json:
+	 *             schema:
+	 *               type: object
+	 *               properties:
+	 *                 status:
+	 *                   type: string
+	 *                   example: "error"
+	 *                 message:
+	 *                   type: string
+	 *                   example: "Database error"
+	 */
     const { name, email, password } = req.body;    
     const hashedPassword = await bcrypt.hash(password, 10);
     
@@ -74,23 +110,59 @@ exports.register = async (req, res) => {
 };
 
 exports.verifyEmail = async (req, res) => {
-    try {
-        const { token } = req.params;
-        const decoded = jwt.verify(token, JWT_SECRET);
+	/**
+	 * @swagger
+	 * /api/v1/auth/verify/{token}:
+	 *   get:
+	 *     description: Verify user's email using a token sent via email.
+	 *     tags:
+	 *       - Authentication
+	 *     parameters:
+	 *       - name: token
+	 *         in: path
+	 *         required: true
+	 *         schema:
+	 *           type: string
+	 *         description: Verification token
+	 *     responses:
+	 *       200:
+	 *         description: Emmail verified successfully
+	 *         content:
+	 *           application/json:
+	 *             schema:
+	 *               type: object
+	 *               properties:
+	 *                 message:
+	 *                   type: string
+	 *                   example: "Email verified successfully"
+	 *       400:
+	 *         description: Invalid or expired token
+	 *         content:
+	 *           application/json:
+	 *             schema:
+	 *               type: object
+	 *               properties:
+	 *                 error:
+	 *                   type: string
+	 *                   example: "Invalid or expired token"
+	 */
+  	try {
+		const { token } = req.params;
+		const decoded = jwt.verify(token, JWT_SECRET);
 
-        await User.update(
-            { isVerified: true },
-            {
-                where: {
-                    email: decoded.email,
-                },
-            },
-        );
+		await User.update(
+			{ isVerified: true },
+			{
+				where: {
+					email: decoded.email,
+				},
+			},
+		);
 
-        res.send('Email verified successfully');
-    } catch (error) {
-        res.status(400).send('Invalid or expired token');
-    }
+		res.send('Email verified successfully');
+	} catch (error) {
+		res.status(400).send('Invalid or expired token');
+	}
 };
 
 // 用戶登入
