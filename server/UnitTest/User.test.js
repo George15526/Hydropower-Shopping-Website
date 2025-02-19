@@ -9,7 +9,7 @@ const { sequelize } = require('../config/db');
 jest.mock('../models/mysql/User')
 
 describe(`POST /api/v1/register`, () => {
-    const baseUrl = '/api/v1/register';
+    const baseUrl = '/api/v1/auth/register';
 
     beforeEach(() => {
         jest.clearAllMocks();
@@ -20,7 +20,7 @@ describe(`POST /api/v1/register`, () => {
         jest.resetModules();
     });
 
-    it('200 - Register successfully', async () => {
+    it('201 - User registered. Please verify your email.', async () => {
         const mockUser = {
             id: 1,
             name: 'testUser',
@@ -38,11 +38,10 @@ describe(`POST /api/v1/register`, () => {
                 password: 'testUserPassword'
             });
         
-        expect(res.status).toBe(200);
+        expect(res.status).toBe(201);
         expect(res.body).toEqual({
             status: 'success',
-            message: 'User registered successfully',
-            data: expect.any(Object),
+            message: 'User registered. Please verify your email.',
         });
         expect(User.create).toHaveBeenCalledWith({
             name: 'testUser',
