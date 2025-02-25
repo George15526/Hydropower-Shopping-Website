@@ -159,8 +159,10 @@ exports.verifyEmail = async (req, res) => {
 			},
 		);
 
+		console.log('Email verified successfully');
 		res.send('Email verified successfully');
 	} catch (error) {
+		console.log('Invalid or expired token');
 		res.status(400).send('Invalid or expired token');
 	}
 };
@@ -168,7 +170,7 @@ exports.verifyEmail = async (req, res) => {
 // 用戶登入
 exports.login = async (req, res) => {
     const { email, password } = req.body;
-    const user = await User.findOne({where: { email: email }});
+    const user = await User.findOne({ where: { email: email } });
     if (!user) {
         return res.status(400).json({ error: 'Invalid credentials' });
     };
@@ -177,5 +179,6 @@ exports.login = async (req, res) => {
         return res.status(400).json({ error: 'Invalid credentials' });
     };
     const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: '1h' });
-    res.json({ token });
+    console.log(token);
+	return res.json('Login successfully');
 };
